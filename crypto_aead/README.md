@@ -31,6 +31,7 @@ Sempre per quanto riguarda i tempi di esecuzione:
 | armv7m_lowsize  | 13108 byte [2%]   | 14288 byte            | 56               | 2.750s                            | 44 e 86                        | 111 e 220                      |
 | armv7m_small    | 14332 byte [2%]   | 15512 byte            | 61               | 2.998s                            | 38 e 77                        | 98 e 198                       |
 | bi32_armv7m     | 44708 byte [8%]   | 45888 byte            | 180              | 8.833s                            | 39 e 81                        | 105 e 211                      |
+| ref             | 14332 byte [2%]   | 15512 byte            | 61               | 2.997s                            | 144 e 294                      | 384 e 781                      |
 
 ## Ascon128bi32v12
 
