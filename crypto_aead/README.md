@@ -23,6 +23,10 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 ## Ascon128abi32v12
 
+| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
+| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
+| bi32_armv7m     | 38636 byte [7%]   | 39816 byte            | 156              | 7.680s                            | 35 e 71                        | 88 e 177                       |
+
 ## Ascon128av12
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
