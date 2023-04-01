@@ -31,3 +31,9 @@ Sempre per quanto riguarda i tempi di esecuzione:
 | armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.555s                            | 55                             | 1529                           |
 | bi32_armv7m     | 19620 byte [3%]   | 20800 byte            | 82               | 4.022s                            | 55                             | 1457                           |
 | ref             | 12268 byte [2%]   | 13448 byte            | 53               | 2.607s                            | 244                            | 5701                           |
+
+## Asconhashbi32v12
+
+| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
+| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
+| bi32_armv7m     | 21004 byte [4%]   | 22184 byte            | 87               | 4.274s                            | 66                             | 1867                           |
