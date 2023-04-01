@@ -20,3 +20,4 @@ Sempre per quanto riguarda i tempi di esecuzione:
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
 | bi32_armv7m     | 19012 byte [3%]   | 20192 byte            | 79               | 3.881s                            | 52                             | 1309                           |
+| ref             | 12244 byte [2%]   | 13424 byte            | 53               | 2.592s                            | 513                            | 11707                          |
