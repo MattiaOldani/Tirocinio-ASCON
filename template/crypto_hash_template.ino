@@ -21,7 +21,11 @@
 
 
 // FILE config.h
-
+#define ASCON_INLINE_MODE
+#define ASCON_INLINE_PERM
+#define ASCON_UNROLL_LOOPS
+#define ASCON_INLINE_BI
+#define ASCON_EXTERN_BI
 
 // FILE constants.h
 #include <stdint.h>
@@ -73,7 +77,7 @@ void test(unsigned long long mlen)
     }
     Serial.println(micros() - time);
 
-    // for (unsigned long long i = 0; i < clen; i++) Serial.print(digest[i], HEX);
+    // for (unsigned long long i = 0; i < CRYPTO_BYTES; i++) Serial.print(digest[i], HEX);
     // Serial.println();
 }
 
@@ -81,7 +85,7 @@ void test(unsigned long long mlen)
 
 void setup()
 {
-    erial.begin(9600);
+    Serial.begin(9600);
 
     // Caso migliore
     test(0);
