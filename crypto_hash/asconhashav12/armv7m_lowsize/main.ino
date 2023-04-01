@@ -611,7 +611,6 @@ int crypto_hash(unsigned char *out, const unsigned char *in,
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Test
 #define MAX_MESSAGE_LENGTH 1024
 
 void init_buffer(unsigned char *buffer, unsigned long long numbytes)
