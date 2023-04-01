@@ -19,15 +19,15 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| bi32_armv7m     | 19012 byte [3%]   | 20192 byte            | 79               | 3.881s                            | 52                             | 1309                           |
+| bi32_armv7m     | 18980 byte [3%]   | 20160 byte            | 79               | 3.881s                            | 52                             | 1309                           |
 | ref             | 12244 byte [2%]   | 13424 byte            | 53               | 2.592s                            | 513                            | 11707                          |
 
 ## Asconhashav12
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          | 18628 byte [3%]   | 19808 byte            | 78               | 3.824s                            | 66                             | 1878                           |
-| armv7m_lowsize  | 12148 byte [2%]   | 13328 byte            | 53               | 2.591s                            | 56                             | 1529                           |
-| armv7m_small    | 12148 byte [2%]   | 13328 byte            | 53               | 2.591s                            | 55                             | 1529                           |
+| armv7m          | 18604 byte [3%]   | 19784 byte            | 78               | 3.820s                            | 66                             | 1878                           |
+| armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.555s                            | 56                             | 1529                           |
+| armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.555s                            | 55                             | 1529                           |
 | bi32_armv7m     | 19620 byte [3%]   | 20800 byte            | 82               | 4.022s                            | 55                             | 1457                           |
-| ref             | 12260 byte [2%]   | 13440 byte            | 53               | 2.611s                            | 244                            | 5701                           |
+| ref             | 12268 byte [2%]   | 13448 byte            | 53               | 2.607s                            | 244                            | 5701                           |

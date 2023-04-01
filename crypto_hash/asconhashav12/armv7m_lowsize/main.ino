@@ -35,10 +35,6 @@ typedef union
 void ascon_update(uint8_t mode, ascon_state_t *s, uint8_t *out,
                   const uint8_t *in, uint64_t len);
 
-void ascon_aead(uint8_t *t, uint8_t *out, const uint8_t *in, uint64_t len,
-                const uint8_t *ad, uint64_t adlen, const uint8_t *npub,
-                const uint8_t *k, uint8_t mode);
-
 // FILE bendian.h
 #define U64BIG(x)                            \
     (((0x00000000000000FFULL & (x)) << 56) | \
