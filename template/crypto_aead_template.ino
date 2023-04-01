@@ -24,6 +24,8 @@
 #define ASCON_INLINE_MODE
 #define ASCON_INLINE_PERM
 #define ASCON_UNROLL_LOOPS
+#define ASCON_INLINE_BI
+#define ASCON_EXTERN_BI
 
 // FILE constants.h
 #include <stdint.h>
@@ -50,13 +52,14 @@
 // FILE aead.c
 
 
+// FILE crypto_aead.c
+
+
+// FILE update.c
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define KAT_SUCCESS 0
-#define KAT_FILE_OPEN_ERROR -1
-#define KAT_DATA_ERROR -3
-#define KAT_CRYPTO_FAILURE -4
-#define MAX_FILE_NAME 256
 #define MAX_MESSAGE_LENGTH 32
 #define MAX_ASSOCIATED_DATA_LENGTH 32
 
