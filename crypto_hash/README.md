@@ -54,3 +54,4 @@ Sempre per quanto riguarda i tempi di esecuzione:
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
 | armv7m          | 18604 byte [3%]   | 19784 byte            | 78               | 3.827s                            | 66                             | 1878                           |
+| armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.555s                            | 55                             | 1527                           |
