@@ -85,7 +85,7 @@ void test(unsigned long long dlen)
     // Serial.println();
 
     time = micros();
-    if (crypto_auth_verify(tag, msg, dlen, key)) != 0)
+    if (crypto_auth_verify(tag, msg, dlen, key) != 0)
     {
         Serial.println("Errore: crypto_auth_verify");
     }
