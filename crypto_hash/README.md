@@ -47,3 +47,4 @@ Sempre per quanto riguarda i tempi di esecuzione:
 | armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.553s                            | 69                             | 2161                           |
 | armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 69                             | 2161                           |
 | bi32_armv7m     | 21580 byte [4%]   | 22760 byte            | 89               | 4.370s                            | 70                             | 1970                           |
+| ref             | 12196 byte [2%]   | 13376 byte            | 53               | 2.595s                            | 299                            | 8076                           |
