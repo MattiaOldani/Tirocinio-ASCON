@@ -91,7 +91,7 @@ void test(unsigned long long dlen)
     }
 
     // test failed verification
-    ct[0] ^= 1;
+    tag[0] ^= 1;
     if (crypto_auth_verify(tag, msg, dlen, key) == 0)
     {
         Serial.println("Errore: diverso tag");
