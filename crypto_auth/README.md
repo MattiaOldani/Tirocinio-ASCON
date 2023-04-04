@@ -40,13 +40,25 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
+| armv7m          | 18916 byte [3%]   | 20096 byte            | 79               | 3.868s                            | 44 e 91                        | 459 e 921                      |
+| armv7m_small    | 12436 byte [2%]   | 13616 byte            | 54               | 2.641s                            | 38 e 80                        | 393 e 789                      |
+| bi32_armv7m     | 23252 byte [4%]   | 24432 byte            | 96               | 4.704s                            | 36 e 76                        | 471 e 946                      |
+| ref             | 12620 byte [2%]   | 13800 byte            | 54               | 2.652s                            | 132 e 272                      | 1767 e 3540                    |
 
 ## Asconprfsv12
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
+| armv7m          |  byte [%]   |  byte            |                | s                            |  e                         |  e                      |
+| armv7m_small    |  byte [%]   |  byte            |                | s                            |  e                         |  e                      |
+| bi32_armv7m     |  byte [%]   |  byte            |               | s                            |  e                         |  e                      |
+| ref             |  byte [%]   |  byte            |                | s                            |  e                       |  e                     |
 
 ## Asconprfv12
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
+| armv7m          |  byte [%]   |  byte            |                | s                            |  e                         |  e                      |
+| armv7m_small    |  byte [%]   |  byte            |                | s                            |  e                         |  e                      |
+| bi32_armv7m     |  byte [%]   |  byte            |               | s                            |  e                         |  e                      |
+| ref             |  byte [%]   |  byte            |                | s                            |  e                       |  e                     |
