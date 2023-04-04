@@ -63,8 +63,8 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          | 15772 byte [3%]   | 16952 byte            | 67               | 3.279s                            | 83                             | 2603                           |
-| armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 70                             | 2161                           |
-| armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.555s                            | 69                             | 2161                           |
-| bi32_armv7m     | 21580 byte [4%]   | 22760 byte            | 89               | 4.374s                            | 69                             | 1970                           |
-| ref             | 12188 byte [2%]   | 13368 byte            | 53               | 2.591s                            | 300                            | 8199                           |
+| armv7m          | 15844 byte [3%]   | 17024 byte            | 67               | 3.279s                            | 86                             | 2615                           |
+| armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 71                             | 2207                           |
+| armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 71                             | 2207                           |
+| bi32_armv7m     | 21628 byte [4%]   | 22808 byte            | 90               | 4.410s                            | 71                             | 2028                           |
+| ref             | 12204 byte [2%]   | 13384 byte            | 53               | 2.592s                            | 299                            | 8163                           |
