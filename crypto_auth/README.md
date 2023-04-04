@@ -15,8 +15,10 @@ I **tempi di esecuzione** sono espressi in microsecondi e sono formati da due va
   * una "decifratura" per verificare la validità del tag
 
 Sempre per quanto riguarda i tempi di esecuzione:
-* il **caso migliore** è calcolato usando `dlen = 0`, parametri usati nelle funzioni `crypto_auth` e `crypto_auth_verify` che diminuiscono il numero di iterazioni necessarie alla terminazione dell'algoritmo
-* il **caso peggiore** è calcolato usando `dlen = MAX_DATA_LENGTH`, parametri usati nelle funzioni `crypto_auth` e `crypto_auth_verify` che aumentano il numero di iterazioni necessarie alla terminazione dell'algoritmo
+* il **caso migliore** è calcolato usando `dlen = 0`, parametro usato nelle funzioni `crypto_auth` e `crypto_auth_verify` che diminuisce il numero di iterazioni necessarie alla terminazione dell'algoritmo
+* il **caso peggiore** è calcolato usando:
+  * `dlen = 16` nella famiglia **asconprfs**, parametro usato nelle funzioni `crypto_auth` e `crypto_auth_verify` che aumenta il numero di iterazioni necessarie alla terminazione dell'algoritmo
+  * `dlen = MAX_DATA_LENGTH` nelle restanti famiglie, parametro usato nelle funzioni `crypto_auth` e `crypto_auth_verify` che aumenta il numero di iterazioni necessarie alla terminazione dell'algoritmo
 
 ## Asconmacav12
 
@@ -49,10 +51,10 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          |  byte [%]   |  byte            |                | s                            |  e                         |  e                      |
-| armv7m_small    |  byte [%]   |  byte            |                | s                            |  e                         |  e                      |
-| bi32_armv7m     |  byte [%]   |  byte            |               | s                            |  e                         |  e                      |
-| ref             |  byte [%]   |  byte            |                | s                            |  e                       |  e                     |
+| armv7m          | 16196 byte [3%]   | 17376 byte            | 68               | 3.338s                            | 25 e 54                        | 25 e 55                        |
+| armv7m_small    | 12548 byte [2%]   | 13728 byte            | 54               | 2.653s                            | 21 e 45                        | 21 e 47                        |
+| bi32_armv7m     | 16460 byte [3%]   | 17640 byte            | 69               | 3.389s                            | 24 e 51                        | 26 e 54                        |
+| ref             | 12460 byte [2%]   | 13640 byte            | 54               | 2.640s                            | 79 e 162                       | 89 e 185                       |
 
 ## Asconprfv12
 
