@@ -26,11 +26,11 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          | 18604 byte [3%]   | 19784 byte            | 78               | 3.820s                            | 66                             | 1878                           |
-| armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.555s                            | 56                             | 1529                           |
-| armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.555s                            | 55                             | 1529                           |
-| bi32_armv7m     | 19620 byte [3%]   | 20800 byte            | 82               | 4.022s                            | 55                             | 1457                           |
-| ref             | 12268 byte [2%]   | 13448 byte            | 53               | 2.607s                            | 244                            | 5701                           |
+| armv7m          | 18676 byte [3%]   | 19856 byte            | 78               | 3.831s                            | 69                             | 1883                           |
+| armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 56                             | 1561                           |
+| armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 56                             | 1560                           |
+| bi32_armv7m     | 19660 byte [3%]   | 20840 byte            | 82               | 4.016s                            | 56                             | 1494                           |
+| ref             | 12276 byte [2%]   | 13456 byte            | 53               | 2.599s                            | 244                            | 5692                           |
 
 ## Asconhashbi32v12
 
