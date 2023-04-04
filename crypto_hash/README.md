@@ -43,11 +43,11 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          | 15772 byte [3%]   | 16952 byte            | 67               | 3.279s                            | 83                             | 2603                           |
-| armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.553s                            | 69                             | 2161                           |
-| armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 69                             | 2161                           |
-| bi32_armv7m     | 21580 byte [4%]   | 22760 byte            | 89               | 4.370s                            | 70                             | 1970                           |
-| ref             | 12196 byte [2%]   | 13376 byte            | 53               | 2.595s                            | 299                            | 8076                           |
+| armv7m          | 15844 byte [3%]   | 17024 byte            | 67               | 3.283s                            | 85                             | 2615                           |
+| armv7m_lowsize  | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 71                             | 2207                           |
+| armv7m_small    | 12124 byte [2%]   | 13304 byte            | 52               | 2.554s                            | 71                             | 2207                           |
+| bi32_armv7m     | 21628 byte [4%]   | 22808 byte            | 90               | 4.415s                            | 71                             | 2028                           |
+| ref             | 12204 byte [2%]   | 13384 byte            | 53               | 2.590s                            | 300                            | 8148                           |
 
 ## Asconxofav12
 
