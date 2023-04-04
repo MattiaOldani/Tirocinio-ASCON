@@ -23,7 +23,7 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          | 19908 byte [3%]   | 21088 byte            | 83               | 4.066s                            | 46 e 92                        | 146 e 295                      |
+| armv7m          |  byte [%]   |  byte            | 83               | 4.066s                            | 46 e 92                        | 146 e 295                      |
 | armv7m_lowsize  | 13180 byte [2%]   | 14360 byte            | 57               | 2.788s                            | 43 e 89                        | 129 e 264                      |
 | armv7m_small    | 14140 byte [2%]   | 15320 byte            | 60               | 2.947s                            | 39 e 79                        | 123 e 248                      |
 | bi32_armv7m     | 39908 byte [7%]   | 41088 byte            | 161              | 7.904s                            | 41 e 83                        | 128 e 257                      |
@@ -57,8 +57,8 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          | 19668 byte [3%]   | 20848 byte            | 82               | 4.016s                            | 45 e 90                        | 146 e 294                      |
-| armv7m_lowsize  | 13076 byte [2%]   | 14256 byte            | 56               | 2.751s                            | 44 e 85                        | 131 e 259                      |
-| armv7m_small    | 13948 byte [2%]   | 15128 byte            | 60               | 2.935s                            | 38 e 77                        | 122 e 245                      |
-| bi32_armv7m     | 38980 byte [7%]   | 40160 byte            | 157              | 7.719s                            | 38 e 77                        | 123 e 246                      |
-| ref             | 13732 byte [2%]   | 14912 byte            | 59               | 2.891s                            | 143 e 293                      | 448 e 906                      |
+| armv7m          | 19572 byte [3%]   | 20752 byte            | 82               | 4.017s                            | 46 e 93                        | 148 e 296                      |
+| armv7m_lowsize  | 13084 byte [2%]   | 14264 byte            | 56               | 2.751s                            | 44 e 85                        | 131 e 259                      |
+| armv7m_small    | 13948 byte [2%]   | 15128 byte            | 60               | 2.940s                            | 38 e 78                        | 124 e 248                      |
+| bi32_armv7m     | 39340 byte [7%]   | 40520 byte            | 159              | 7.801s                            | 39 e 80                        | 129 e 260                      |
+| ref             | 13748 byte [2%]   | 14928 byte            | 59               | 2.891s                            | 147 e 302                      | 462 e 935                      |
