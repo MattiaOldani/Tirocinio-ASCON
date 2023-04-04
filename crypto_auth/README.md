@@ -22,6 +22,10 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
+| armv7m          | 18916 byte [3%]   | 20096 byte            | 79               | 3.868s                            | 44 e 91                        | 459 e 921                      |
+| armv7m_small    | 12436 byte [2%]   | 13616 byte            | 54               | 2.640s                            | 38 e 80                        | 393 e 789                      |
+| bi32_armv7m     | 23276 byte [4%]   | 24456 byte            | 96               | 4.717s                            | 37 e 78                        | 484 e 972                      |
+| ref             | 12620 byte [2%]   | 13800 byte            | 54               | 2.653s                            | 133 e 271                      | 1768 e 3540                    |
 
 ## Asconmacv12
 
