@@ -60,7 +60,7 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          |  byte [%]   |  byte            |                | s                            |  e                         |  e                      |
-| armv7m_small    |  byte [%]   |  byte            |                | s                            |  e                         |  e                      |
-| bi32_armv7m     |  byte [%]   |  byte            |               | s                            |  e                         |  e                      |
-| ref             |  byte [%]   |  byte            |                | s                            |  e                       |  e                     |
+| armv7m          | 16092 byte [3%]   | 17272 byte            | 68               | 3.330s                            | 44 e 91                        | 725 e 1453                     |
+| armv7m_small    | 12444 byte [2%]   | 13624 byte            | 54               | 2.640s                            | 39 e 79                        | 626 e 1255                     |
+| bi32_armv7m     | 25404 byte [4%]   | 26584 byte            | 104              | 5.109s                            | 37 e 80                        | 727 e 1462                     |
+| ref             | 12556 byte [2%]   | 13736 byte            | 54               | 2.652s                            | 134 e 270                      | 2558 e 5120                    |
