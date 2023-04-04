@@ -23,11 +23,11 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv7m          |  byte [%]   |  byte            | 83               | 4.066s                            | 46 e 92                        | 146 e 295                      |
-| armv7m_lowsize  | 13180 byte [2%]   | 14360 byte            | 57               | 2.788s                            | 43 e 89                        | 129 e 264                      |
-| armv7m_small    | 14140 byte [2%]   | 15320 byte            | 60               | 2.947s                            | 39 e 79                        | 123 e 248                      |
-| bi32_armv7m     | 39908 byte [7%]   | 41088 byte            | 161              | 7.904s                            | 41 e 83                        | 128 e 257                      |
-| ref             | 13852 byte [2%]   | 15032 byte            | 59               | 2.899s                            | 146 e 301                      | 451 e 916                      |
+| armv7m          | 19676 byte [3%]   | 20856 byte            | 82               | 4.025s                            | 47 e 96                        | 149 e 298                      |
+| armv7m_lowsize  | 13188 byte [2%]   | 14368 byte            | 57               | 2.784s                            | 44 e 90                        | 131 e 267                      |
+| armv7m_small    | 14140 byte [2%]   | 15320 byte            | 60               | 2.949s                            | 40 e 81                        | 125 e 250                      |
+| bi32_armv7m     | 39844 byte [7%]   | 41024 byte            | 161              | 7.900s                            | 41 e 83                        | 128 e 261                      |
+| ref             | 13916 byte [2%]   | 15096 byte            | 59               | 2.906s                            | 149 e 305                      | 465 e 934                      |
 
 ## Ascon128abi32v12
 
