@@ -50,8 +50,8 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| bi32_armv7m     | 35396 byte [6%]   | 36576 byte            | 143              | 7.027s                            | 35 e 70                        | 108 e 209                      |
-| ref             | 13692 byte [2%]   | 14872 byte            | 59               | 2.890s                            | 294 e 592                      | 942 e 1893                     |
+| bi32_armv7m     | 35404 byte [6%]   | 36584 byte            | 143              | 7.027s                            | 34 e 70                        | 108 e 218                      |
+| ref             | 13708 byte [2%]   | 14888 byte            | 59               | 2.885s                            | 294 e 594                      | 942 e 1891                     |
 
 ## Ascon128v12
 
