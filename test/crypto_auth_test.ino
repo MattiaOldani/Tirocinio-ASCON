@@ -4,7 +4,7 @@ extern "C"
 #include <string.h>
 
 #include "api.h"
-#include "crypto_aead.h"
+#include "crypto_auth.h"
 }
 
 #if defined(AVR_UART)
