@@ -34,8 +34,8 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Spazio variabili globali | Spazio variabili locali | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------ | ----------------------- | ------------------------------ | ------------------------------ |
-| bi32_armv6m     |  byte [%]   |  byte            |               | s                            | 2404 byte [7%]           | 30364 byte              |                          |                          |
-| ref             |  byte [%]  |  byte            |               | s                            | 2404 byte [7%]           | 30364 byte              |                          |                         |
+| bi32_armv6m     | 16216 byte [6%]   | 16308 byte            | 255              | 0.134s                            | 2404 byte [7%]           | 30364 byte              | 232                            | 7007                           |
+| ref             | 27296 byte [10%]  | 27388 byte            | 428              | 0.250s                            | 2404 byte [7%]           | 30364 byte              | 392                            | 10035                          |
 
 ## Asconhashv12
 
