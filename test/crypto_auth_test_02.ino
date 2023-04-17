@@ -58,6 +58,9 @@ void setup()
 {
     Serial.begin(9600);
 
+    // Tip by Matteo Yon per permettere la stampa
+    while (!Serial);
+
     // Caso migliore
     test(0);
 
