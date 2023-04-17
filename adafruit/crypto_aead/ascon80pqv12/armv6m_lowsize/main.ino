@@ -74,13 +74,15 @@ void setup()
   Serial.begin(9600);
 
   // Tip by Matteo Yon per permettere la stampa
-  delay(3000);
+  while (!Serial);
 
   // Caso migliore
   test(0, 0);
 
   // Caso peggiore
   test(MAX_MESSAGE_LENGTH, MAX_ASSOCIATED_DATA_LENGTH);
+
+  Serial.end();
 }
 
 void loop() {}
