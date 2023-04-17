@@ -25,7 +25,7 @@ Sempre per quanto riguarda i tempi di esecuzione:
 | armv6m          | 21932 byte [8%]   | 22024 byte            | 345              | 0.184s                            | 2404 byte [7%]           | 30364 byte              | 126 e 255                      | 399 e 801                      |
 | armv6m_lowsize  | 16748 byte [6%]   | 16840 byte            | 264              | 0.144s                            | 2404 byte [7%]           | 30364 byte              | 135 e 275                      | 412 e 846                      |
 | bi32_armv6m     | 25304 byte [9%]   | 25396 byte            | 397              | 0.207s                            | 2404 byte [7%]           | 30364 byte              | 135 e 273                      | 418 e 852                      |
-| ref             | 53152 byte [20%]  | 53244 byte            | 832              | 0.406s                            | 2404 byte [7%]           | 30364 byte              | 184 e 364                      | 575 e 1166                     |
+| ref             | 53152 byte [20%]  | 53244 byte            | 832              | 0.406s                            | 2404 byte [7%]           | 30364 byte              | 180 e 364                      | 580 e 1166                     |
 
 ## Ascon128abi32v12
 
@@ -41,14 +41,14 @@ Sempre per quanto riguarda i tempi di esecuzione:
 | armv6m          | 22992 byte [8%]   | 23084 byte            | 361              | 0.187s                            | 2404 byte [7%]           | 30364 byte              | 129 e 245                      | 317 e 648                      |
 | armv6m_lowsize  | 16772 byte [6%]   | 16864 byte            | 264              | 0.134s                            | 2404 byte [7%]           | 30364 byte              | 136 e 264                      | 343 e 705                      |
 | bi32_armv6m     | 27632 byte [10%]  | 27724 byte            | 434              | 0.233s                            | 2404 byte [7%]           | 30364 byte              | 129 e 260                      | 339 e 698                      |
-| ref             | 53152 byte [20%]  | 53244 byte            | 832              | 0.459s                            | 2404 byte [7%]           | 30364 byte              | 177 e 365                      | 574 e 1165                     |
+| ref             | 56296 byte [21%]  | 56388 byte            | 882              | 0.443s                            | 2404 byte [7%]           | 30364 byte              | 173 e 378                      | 473 e 989                      |
 
 ## Ascon128bi32v12
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Spazio variabili globali | Spazio variabili locali | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------ | ----------------------- | ------------------------------ | ------------------------------ |
 | bi32_armv6m     | 21800 byte [8%]   | 21892 byte            | 343              | 0.194s                            | 2404 byte [7%]           | 30364 byte              | 125 e 236                      | 379 e 774                      |
-| ref             | 48236 byte [18%]  | 48328 byte            | 756              | 0.390s                            | 2404 byte [7%]           | 30364 byte              | 170 e 388                      | 452 e 963                      |
+| ref             | 39512 byte [15%]  | 39604 byte            | 619              | 0.312s                            | 2404 byte [7%]           | 30364 byte              | 177 e 374                      | 557 e 1131                     |
 
 ## Ascon128v12
 
@@ -57,4 +57,4 @@ Sempre per quanto riguarda i tempi di esecuzione:
 | armv6m          | 21748 byte [8%]   | 21840 byte            | 342              | 0.212s                            | 2404 byte [7%]           | 30364 byte              | 120 e 241                      | 384 e 788                      |
 | armv6m_lowsize  | 16708 byte [6%]   | 16800 byte            | 263              | 0.140s                            | 2404 byte [7%]           | 30364 byte              | 136 e 263                      | 407 e 834                      |
 | bi32_armv6m     | 24960 byte [9%]   | 25052 byte            | 392              | 0.211s                            | 2404 byte [7%]           | 30364 byte              | 127 e 257                      | 409 e 837                      |
-| ref             | 53152 byte [20%]  | 53244 byte            | 832              | 0.428s                            | 2404 byte [7%]           | 30364 byte              | 177 e 373                      | 567 e 1172                     |
+| ref             | 52928 byte [20%]  | 53020 byte            | 829              | 0.421s                            | 2404 byte [7%]           | 30364 byte              | 173 e 371                      | 562 e 1165                     |

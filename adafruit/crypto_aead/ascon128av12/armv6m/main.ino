@@ -43,8 +43,8 @@ void test(unsigned long long mlen, unsigned long long adlen)
   }
   Serial.println(micros() - time);
 
-  for (unsigned long long i = 0; i < clen; i++) Serial.print(ct[i], HEX);
-  Serial.println();
+  // for (unsigned long long i = 0; i < clen; i++) Serial.print(ct[i], HEX);
+  // Serial.println();
 
   time = micros();
   if (crypto_aead_decrypt(msg2, &mlen2, NULL, ct, clen, ad, adlen, nonce, key) != 0)

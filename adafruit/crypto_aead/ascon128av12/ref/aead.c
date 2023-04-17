@@ -16,70 +16,84 @@ int crypto_aead_encrypt(unsigned char* c, unsigned long long* clen,
   *clen = mlen + CRYPTO_ABYTES;
 
   /* load key and nonce */
-  const uint64_t K0 = LOADBYTES(k + 0, 4) >> 32;
-  const uint64_t K1 = LOADBYTES(k + 4, 8);
-  const uint64_t K2 = LOADBYTES(k + 12, 8);
+  const uint64_t K0 = LOADBYTES(k, 8);
+  const uint64_t K1 = LOADBYTES(k + 8, 8);
   const uint64_t N0 = LOADBYTES(npub, 8);
   const uint64_t N1 = LOADBYTES(npub + 8, 8);
 
   /* initialize */
   ascon_state_t s;
-  s.x[0] = ASCON_80PQ_IV | K0;
-  s.x[1] = K1;
-  s.x[2] = K2;
+  s.x[0] = ASCON_128A_IV;
+  s.x[1] = K0;
+  s.x[2] = K1;
   s.x[3] = N0;
   s.x[4] = N1;
   printstate("init 1st key xor", &s);
   P12(&s);
-  s.x[2] ^= K0;
-  s.x[3] ^= K1;
-  s.x[4] ^= K2;
+  s.x[3] ^= K0;
+  s.x[4] ^= K1;
   printstate("init 2nd key xor", &s);
 
   if (adlen) {
     /* full associated data blocks */
-    while (adlen >= ASCON_128_RATE) {
+    while (adlen >= ASCON_128A_RATE) {
       s.x[0] ^= LOADBYTES(ad, 8);
+      s.x[1] ^= LOADBYTES(ad + 8, 8);
       printstate("absorb adata", &s);
-      P6(&s);
-      ad += ASCON_128_RATE;
-      adlen -= ASCON_128_RATE;
+      P8(&s);
+      ad += ASCON_128A_RATE;
+      adlen -= ASCON_128A_RATE;
     }
     /* final associated data block */
-    s.x[0] ^= LOADBYTES(ad, adlen);
-    s.x[0] ^= PAD(adlen);
+    if (adlen >= 8) {
+      s.x[0] ^= LOADBYTES(ad, 8);
+      s.x[1] ^= LOADBYTES(ad + 8, adlen - 8);
+      s.x[1] ^= PAD(adlen - 8);
+    } else {
+      s.x[0] ^= LOADBYTES(ad, adlen);
+      s.x[0] ^= PAD(adlen);
+    }
     printstate("pad adata", &s);
-    P6(&s);
+    P8(&s);
   }
   /* domain separation */
   s.x[4] ^= 1;
   printstate("domain separation", &s);
 
   /* full plaintext blocks */
-  while (mlen >= ASCON_128_RATE) {
+  while (mlen >= ASCON_128A_RATE) {
     s.x[0] ^= LOADBYTES(m, 8);
+    s.x[1] ^= LOADBYTES(m + 8, 8);
     STOREBYTES(c, s.x[0], 8);
+    STOREBYTES(c + 8, s.x[1], 8);
     printstate("absorb plaintext", &s);
-    P6(&s);
-    m += ASCON_128_RATE;
-    c += ASCON_128_RATE;
-    mlen -= ASCON_128_RATE;
+    P8(&s);
+    m += ASCON_128A_RATE;
+    c += ASCON_128A_RATE;
+    mlen -= ASCON_128A_RATE;
   }
   /* final plaintext block */
-  s.x[0] ^= LOADBYTES(m, mlen);
-  STOREBYTES(c, s.x[0], mlen);
-  s.x[0] ^= PAD(mlen);
+  if (mlen >= 8) {
+    s.x[0] ^= LOADBYTES(m, 8);
+    s.x[1] ^= LOADBYTES(m + 8, mlen - 8);
+    STOREBYTES(c, s.x[0], 8);
+    STOREBYTES(c + 8, s.x[1], mlen - 8);
+    s.x[1] ^= PAD(mlen - 8);
+  } else {
+    s.x[0] ^= LOADBYTES(m, mlen);
+    STOREBYTES(c, s.x[0], mlen);
+    s.x[0] ^= PAD(mlen);
+  }
   c += mlen;
   printstate("pad plaintext", &s);
 
   /* finalize */
-  s.x[1] ^= K0 << 32 | K1 >> 32;
-  s.x[2] ^= K1 << 32 | K2 >> 32;
-  s.x[3] ^= K2 << 32;
+  s.x[2] ^= K0;
+  s.x[3] ^= K1;
   printstate("final 1st key xor", &s);
   P12(&s);
-  s.x[3] ^= K1;
-  s.x[4] ^= K2;
+  s.x[3] ^= K0;
+  s.x[4] ^= K1;
   printstate("final 2nd key xor", &s);
 
   /* set tag */
@@ -102,40 +116,45 @@ int crypto_aead_decrypt(unsigned char* m, unsigned long long* mlen,
   *mlen = clen - CRYPTO_ABYTES;
 
   /* load key and nonce */
-  const uint64_t K0 = LOADBYTES(k + 0, 4) >> 32;
-  const uint64_t K1 = LOADBYTES(k + 4, 8);
-  const uint64_t K2 = LOADBYTES(k + 12, 8);
+  const uint64_t K0 = LOADBYTES(k, 8);
+  const uint64_t K1 = LOADBYTES(k + 8, 8);
   const uint64_t N0 = LOADBYTES(npub, 8);
   const uint64_t N1 = LOADBYTES(npub + 8, 8);
 
   /* initialize */
   ascon_state_t s;
-  s.x[0] = ASCON_80PQ_IV | K0;
-  s.x[1] = K1;
-  s.x[2] = K2;
+  s.x[0] = ASCON_128A_IV;
+  s.x[1] = K0;
+  s.x[2] = K1;
   s.x[3] = N0;
   s.x[4] = N1;
   printstate("init 1st key xor", &s);
   P12(&s);
-  s.x[2] ^= K0;
-  s.x[3] ^= K1;
-  s.x[4] ^= K2;
+  s.x[3] ^= K0;
+  s.x[4] ^= K1;
   printstate("init 2nd key xor", &s);
 
   if (adlen) {
     /* full associated data blocks */
-    while (adlen >= ASCON_128_RATE) {
+    while (adlen >= ASCON_128A_RATE) {
       s.x[0] ^= LOADBYTES(ad, 8);
+      s.x[1] ^= LOADBYTES(ad + 8, 8);
       printstate("absorb adata", &s);
-      P6(&s);
-      ad += ASCON_128_RATE;
-      adlen -= ASCON_128_RATE;
+      P8(&s);
+      ad += ASCON_128A_RATE;
+      adlen -= ASCON_128A_RATE;
     }
     /* final associated data block */
-    s.x[0] ^= LOADBYTES(ad, adlen);
-    s.x[0] ^= PAD(adlen);
+    if (adlen >= 8) {
+      s.x[0] ^= LOADBYTES(ad, 8);
+      s.x[1] ^= LOADBYTES(ad + 8, adlen - 8);
+      s.x[1] ^= PAD(adlen - 8);
+    } else {
+      s.x[0] ^= LOADBYTES(ad, adlen);
+      s.x[0] ^= PAD(adlen);
+    }
     printstate("pad adata", &s);
-    P6(&s);
+    P8(&s);
   }
   /* domain separation */
   s.x[4] ^= 1;
@@ -143,33 +162,46 @@ int crypto_aead_decrypt(unsigned char* m, unsigned long long* mlen,
 
   /* full ciphertext blocks */
   clen -= CRYPTO_ABYTES;
-  while (clen >= ASCON_128_RATE) {
+  while (clen >= ASCON_128A_RATE) {
     uint64_t c0 = LOADBYTES(c, 8);
+    uint64_t c1 = LOADBYTES(c + 8, 8);
     STOREBYTES(m, s.x[0] ^ c0, 8);
+    STOREBYTES(m + 8, s.x[1] ^ c1, 8);
     s.x[0] = c0;
+    s.x[1] = c1;
     printstate("insert ciphertext", &s);
-    P6(&s);
-    m += ASCON_128_RATE;
-    c += ASCON_128_RATE;
-    clen -= ASCON_128_RATE;
+    P8(&s);
+    m += ASCON_128A_RATE;
+    c += ASCON_128A_RATE;
+    clen -= ASCON_128A_RATE;
   }
   /* final ciphertext block */
-  uint64_t c0 = LOADBYTES(c, clen);
-  STOREBYTES(m, s.x[0] ^ c0, clen);
-  s.x[0] = CLEARBYTES(s.x[0], clen);
-  s.x[0] |= c0;
-  s.x[0] ^= PAD(clen);
+  if (clen >= 8) {
+    uint64_t c0 = LOADBYTES(c, 8);
+    uint64_t c1 = LOADBYTES(c + 8, clen - 8);
+    STOREBYTES(m, s.x[0] ^ c0, 8);
+    STOREBYTES(m + 8, s.x[1] ^ c1, clen - 8);
+    s.x[0] = c0;
+    s.x[1] = CLEARBYTES(s.x[1], clen - 8);
+    s.x[1] |= c1;
+    s.x[1] ^= PAD(clen - 8);
+  } else {
+    uint64_t c0 = LOADBYTES(c, clen);
+    STOREBYTES(m, s.x[0] ^ c0, clen);
+    s.x[0] = CLEARBYTES(s.x[0], clen);
+    s.x[0] |= c0;
+    s.x[0] ^= PAD(clen);
+  }
   c += clen;
   printstate("pad ciphertext", &s);
 
   /* finalize */
-  s.x[1] ^= K0 << 32 | K1 >> 32;
-  s.x[2] ^= K1 << 32 | K2 >> 32;
-  s.x[3] ^= K2 << 32;
+  s.x[2] ^= K0;
+  s.x[3] ^= K1;
   printstate("final 1st key xor", &s);
   P12(&s);
-  s.x[3] ^= K1;
-  s.x[4] ^= K2;
+  s.x[3] ^= K0;
+  s.x[4] ^= K1;
   printstate("final 2nd key xor", &s);
 
   /* set tag */

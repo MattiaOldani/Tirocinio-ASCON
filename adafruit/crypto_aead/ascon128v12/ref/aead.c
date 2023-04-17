@@ -16,24 +16,22 @@ int crypto_aead_encrypt(unsigned char* c, unsigned long long* clen,
   *clen = mlen + CRYPTO_ABYTES;
 
   /* load key and nonce */
-  const uint64_t K0 = LOADBYTES(k + 0, 4) >> 32;
-  const uint64_t K1 = LOADBYTES(k + 4, 8);
-  const uint64_t K2 = LOADBYTES(k + 12, 8);
+  const uint64_t K0 = LOADBYTES(k, 8);
+  const uint64_t K1 = LOADBYTES(k + 8, 8);
   const uint64_t N0 = LOADBYTES(npub, 8);
   const uint64_t N1 = LOADBYTES(npub + 8, 8);
 
   /* initialize */
   ascon_state_t s;
-  s.x[0] = ASCON_80PQ_IV | K0;
-  s.x[1] = K1;
-  s.x[2] = K2;
+  s.x[0] = ASCON_128_IV;
+  s.x[1] = K0;
+  s.x[2] = K1;
   s.x[3] = N0;
   s.x[4] = N1;
   printstate("init 1st key xor", &s);
   P12(&s);
-  s.x[2] ^= K0;
-  s.x[3] ^= K1;
-  s.x[4] ^= K2;
+  s.x[3] ^= K0;
+  s.x[4] ^= K1;
   printstate("init 2nd key xor", &s);
 
   if (adlen) {
@@ -73,13 +71,12 @@ int crypto_aead_encrypt(unsigned char* c, unsigned long long* clen,
   printstate("pad plaintext", &s);
 
   /* finalize */
-  s.x[1] ^= K0 << 32 | K1 >> 32;
-  s.x[2] ^= K1 << 32 | K2 >> 32;
-  s.x[3] ^= K2 << 32;
+  s.x[1] ^= K0;
+  s.x[2] ^= K1;
   printstate("final 1st key xor", &s);
   P12(&s);
-  s.x[3] ^= K1;
-  s.x[4] ^= K2;
+  s.x[3] ^= K0;
+  s.x[4] ^= K1;
   printstate("final 2nd key xor", &s);
 
   /* set tag */
@@ -102,24 +99,22 @@ int crypto_aead_decrypt(unsigned char* m, unsigned long long* mlen,
   *mlen = clen - CRYPTO_ABYTES;
 
   /* load key and nonce */
-  const uint64_t K0 = LOADBYTES(k + 0, 4) >> 32;
-  const uint64_t K1 = LOADBYTES(k + 4, 8);
-  const uint64_t K2 = LOADBYTES(k + 12, 8);
+  const uint64_t K0 = LOADBYTES(k, 8);
+  const uint64_t K1 = LOADBYTES(k + 8, 8);
   const uint64_t N0 = LOADBYTES(npub, 8);
   const uint64_t N1 = LOADBYTES(npub + 8, 8);
 
   /* initialize */
   ascon_state_t s;
-  s.x[0] = ASCON_80PQ_IV | K0;
-  s.x[1] = K1;
-  s.x[2] = K2;
+  s.x[0] = ASCON_128_IV;
+  s.x[1] = K0;
+  s.x[2] = K1;
   s.x[3] = N0;
   s.x[4] = N1;
   printstate("init 1st key xor", &s);
   P12(&s);
-  s.x[2] ^= K0;
-  s.x[3] ^= K1;
-  s.x[4] ^= K2;
+  s.x[3] ^= K0;
+  s.x[4] ^= K1;
   printstate("init 2nd key xor", &s);
 
   if (adlen) {
@@ -163,13 +158,12 @@ int crypto_aead_decrypt(unsigned char* m, unsigned long long* mlen,
   printstate("pad ciphertext", &s);
 
   /* finalize */
-  s.x[1] ^= K0 << 32 | K1 >> 32;
-  s.x[2] ^= K1 << 32 | K2 >> 32;
-  s.x[3] ^= K2 << 32;
+  s.x[1] ^= K0;
+  s.x[2] ^= K1;
   printstate("final 1st key xor", &s);
   P12(&s);
-  s.x[3] ^= K1;
-  s.x[4] ^= K2;
+  s.x[3] ^= K0;
+  s.x[4] ^= K1;
   printstate("final 2nd key xor", &s);
 
   /* set tag */
