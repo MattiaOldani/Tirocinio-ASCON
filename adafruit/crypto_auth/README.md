@@ -55,6 +55,6 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Spazio variabili globali | Spazio variabili locali | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------ | ----------------------- | ------------------------------ | ------------------------------ |
-| armv6m          |  byte [%]   |  byte            |               | s                            | 2404 byte [7%]           | 30364 byte              |  e                       |  e                       |
-| bi32_armv6m     |  byte [%]   |  byte            |               | s                            | 2404 byte [7%]           | 30364 byte              |  e                       |  e                       |
-| ref             |  byte [%]  |  byte            |               | s                            | 2404 byte [7%]           | 30364 byte              |  e                       |  e                      |
+| armv6m          | 17116 byte [6%]   | 17208 byte            | 269              | 0.163s                            | 2404 byte [7%]           | 30364 byte              | 115 e 238                      | 2116 e 4238                    |
+| bi32_armv6m     | 17884 byte [6%]   | 17976 byte            | 281              | 0.158s                            | 2404 byte [7%]           | 30364 byte              | 121 e 249                      | 2301 e 4598                    |
+| ref             | 35816 byte [13%]  | 35908 byte            | 562              | 0.310s                            | 2404 byte [7%]           | 30364 byte              | 168 e 352                      | 3222 e 6454                    |
