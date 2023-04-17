@@ -47,9 +47,9 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Spazio variabili globali | Spazio variabili locali | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------ | ----------------------- | ------------------------------ | ------------------------------ |
-| armv6m          |  byte [%]   |  byte            |               | s                            | 2404 byte [7%]           | 30364 byte              |  e                       |  e                       |
-| bi32_armv6m     |  byte [%]   |  byte            |               | s                            | 2404 byte [7%]           | 30364 byte              |  e                       |  e                       |
-| ref             |  byte [%]  |  byte            |               | s                            | 2404 byte [7%]           | 30364 byte              |  e                       |  e                      |
+| armv6m          | 15924 byte [6%]   | 16016 byte            | 251              | 0.136s                            | 2404 byte [7%]           | 30364 byte              | 62 e 132                       | 64 e 135                       |
+| bi32_armv6m     | 17060 byte [6%]   | 17152 byte            | 268              | 0.162s                            | 2404 byte [7%]           | 30364 byte              | 69 e 146                       | 74 e 155                       |
+| ref             | 20236 byte [7%]   | 20328 byte            | 318              | 0.188s                            | 2404 byte [7%]           | 30364 byte              | 92 e 193                       | 101 e 208                      |
 
 ## Asconprfv12
 
