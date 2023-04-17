@@ -29,32 +29,32 @@ Sempre per quanto riguarda i tempi di esecuzione:
 
 ## Ascon128abi32v12
 
-| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
-| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| bi32_armv6m     |  byte [%]   |  byte            |               | s                            |  e                         |  e                       |
-| ref             |  byte [%]   |  byte            |                | s                            |  e                       |  e                       |
+| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Spazio variabili globali | Spazio variabili locali | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
+| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------ | ----------------------- | ------------------------------ | ------------------------------ |
+| bi32_armv6m     | 23000 byte [8%]   | 23092 byte            | 361              | 0.190s                            | 2404 byte [7%]           | 30364 byte              | 119 e 238                      | 317 e 627                      |
+| ref             | 48236 byte [18%]  | 48328 byte            | 756              | 0.378s                            | 2404 byte [7%]           | 30364 byte              | 169 e 388                      | 452 e 963                      |
 
 ## Ascon128av12
 
-| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
-| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv6m          |  byte [%]   |  byte            |                | s                            |  e                         |  e                       |
-| armv6m_lowsize  |  byte [%]   |  byte            |                | s                            |  e                         |  e                       |
-| bi32_armv6m     |  byte [%]   |  byte            |               | s                            |  e                         |  e                       |
-| ref             |  byte [%]   |  byte            |                | s                            |  e                       |  e                       |
+| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Spazio variabili globali | Spazio variabili locali | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
+| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------ | ----------------------- | ------------------------------ | ------------------------------ |
+| armv6m          |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
+| armv6m_lowsize  |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
+| bi32_armv6m     |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
+| ref             |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
 
 ## Ascon128bi32v12
 
-| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
-| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| bi32_armv6m     |  byte [%]   |  byte            |               | s                            |  e                         |  e                       |
-| ref             |  byte [%]   |  byte            |                | s                            |  e                       |  e                       |
+| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Spazio variabili globali | Spazio variabili locali | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
+| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------ | ----------------------- | ------------------------------ | ------------------------------ |
+| bi32_armv6m     |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
+| ref             |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
 
 ## Ascon128v12
 
-| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
-| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------------ | ------------------------------ |
-| armv6m          |  byte [%]   |  byte            |                | s                            |  e                         |  e                       |
-| armv6m_lowsize  |  byte [%]   |  byte            |                | s                            |  e                         |  e                       |
-| bi32_armv6m     |  byte [%]   |  byte            |               | s                            |  e                         |  e                       |
-| ref             |  byte [%]   |  byte            |                | s                            |  e                       |  e                       |
+| Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine | Spazio variabili globali | Spazio variabili locali | Tempo di esecuzione (migliore) | Tempo di esecuzione (peggiore) |
+| --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | ------------------------ | ----------------------- | ------------------------------ | ------------------------------ |
+| armv6m          |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
+| armv6m_lowsize  |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
+| bi32_armv6m     |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
+| ref             |  byte [%]   |  byte            |               | s                            |  byte [%]           |  byte              |  e                       |  e                       |
