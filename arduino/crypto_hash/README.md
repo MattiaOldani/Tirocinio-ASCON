@@ -22,11 +22,11 @@ I **tempi di esecuzione** sono espressi in microsecondi
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- |
-| armv7m          |  byte [%]   |  byte            |                | s                            |
-| armv7m_lowsize  |  byte [%]   |  byte            |                | s                            |
-| armv7m_small    |  byte [%]   |  byte            |                | s                            |
-| bi32_armv7m     |  byte [%]   |  byte            |                | s                            |
-| ref             |  byte [%]   |  byte            |                | s                            |
+| armv7m          | 18812 byte [3%]   | 19992 byte            | 79               | 3.871s                            |
+| armv7m_lowsize  | 12260 byte [2%]   | 13440 byte            | 53               | 2.593s                            |
+| armv7m_small    | 12260 byte [2%]   | 13440 byte            | 53               | 2.591s                            |
+| bi32_armv7m     | 19788 byte [3%]   | 20968 byte            | 82               | 4.028s                            |
+| ref             | 12412 byte [2%]   | 13592 byte            | 54               | 2.643s                            |
 
 ## Asconhashbi32v12
 
