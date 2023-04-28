@@ -34,10 +34,10 @@ I **tempi di esecuzione** sono espressi in microsecondi e sono formati da due va
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- | 
-| armv7m          |  byte [%]   |  byte            |                | s                            | 
-| armv7m_small    |  byte [%]   |  byte            |                | s                            | 
-| bi32_armv7m     |  byte [%]   |  byte            |                | s                            | 
-| ref             |  byte [%]   |  byte            |                | s                            | 
+| armv7m          | 19060 byte [3%]   | 20240 byte            | 80               | 3.927s                            | 
+| armv7m_small    | 12580 byte [2%]   | 13760 byte            | 54               | 2.653s                            | 
+| bi32_armv7m     | 23396 byte [4%]   | 24576 byte            | 96               | 4.716s                            | 
+| ref             | 12764 byte [2%]   | 13944 byte            | 55               | 2.689s                            | 
 
 ## Asconprfsv12
 
