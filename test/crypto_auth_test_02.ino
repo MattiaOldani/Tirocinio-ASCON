@@ -34,10 +34,8 @@ void test(unsigned long long dlen)
     {
         Serial.println("Errore: crypto_auth");
     }
-    Serial.println(micros() - time);
-
-    // for (unsigned long long i = 0; i < CRYPTO_BYTES; i++) Serial.print(tag[i], HEX);
-    // Serial.println();
+    Serial.print(micros() - time);
+    Serial.print(";");
 
     time = micros();
     if (crypto_auth_verify(tag, msg, dlen, key) != 0)
@@ -51,7 +49,7 @@ void test(unsigned long long dlen)
     {
         Serial.println("Errore: diverso tag");
     }
-    Serial.println(micros() - time);
+    Serial.print(micros() - time);
 }
 
 void setup()
@@ -61,11 +59,15 @@ void setup()
     // Tip by Matteo Yon per permettere la stampa
     while (!Serial);
 
-    // Caso migliore
-    test(0);
-
-    // Caso peggiore
-    test(16);
+    for (int i = 0; i < 1000; i++)
+    {
+        test(0);
+        Serial.print(";");
+        test(8);
+        Serial.print(";");
+        test(16);
+        Serial.println();
+    }
 
     Serial.end();
 }
