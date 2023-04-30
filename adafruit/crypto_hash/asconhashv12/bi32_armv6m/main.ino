@@ -4,6 +4,7 @@ extern "C"
 
 #include "api.h"
 #include "crypto_hash.h"
+#include "constants.h"
 }
 
 #if defined(AVR_UART)
@@ -31,10 +32,7 @@ void test(unsigned long long mlen)
     {
         Serial.println("Errore: crypto_hash");
     }
-    Serial.println(micros() - time);
-
-    // for (unsigned long long i = 0; i < CRYPTO_BYTES; i++) Serial.print(digest[i], HEX);
-    // Serial.println();
+    Serial.print(micros() - time);
 }
 
 void setup()
@@ -44,11 +42,27 @@ void setup()
     // Tip by Matteo Yon per permettere la stampa
     while (!Serial);
 
-    // Caso migliore
-    test(0);
-
-    // Caso peggiore
-    test(MAX_MESSAGE_LENGTH);
+    for (int i = 0; i < 1000; i++)
+    {
+        test(0);
+        Serial.print(";");
+        test(MAX_MESSAGE_LENGTH / 128);
+        Serial.print(";");
+        test(MAX_MESSAGE_LENGTH / 64);
+        Serial.print(";");
+        test(MAX_MESSAGE_LENGTH / 32);
+        Serial.print(";");
+        test(MAX_MESSAGE_LENGTH / 16);
+        Serial.print(";");
+        test(MAX_MESSAGE_LENGTH / 8);
+        Serial.print(";");
+        test(MAX_MESSAGE_LENGTH / 4);
+        Serial.print(";");
+        test(MAX_MESSAGE_LENGTH / 2);
+        Serial.print(";");
+        test(MAX_MESSAGE_LENGTH);
+        Serial.println();
+    }
 
     Serial.end();
 }

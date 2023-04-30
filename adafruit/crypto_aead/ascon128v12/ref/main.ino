@@ -11,8 +11,8 @@ extern "C"
 #include "avr_uart.h"
 #endif
 
-#define MAX_MESSAGE_LENGTH 32
-#define MAX_ASSOCIATED_DATA_LENGTH 32
+#define MAX_MESSAGE_LENGTH 4 * ASCON_AEAD_RATE
+#define MAX_ASSOCIATED_DATA_LENGTH 4 * ASCON_AEAD_RATE
 
 void init_buffer(unsigned char *buffer, unsigned long long numbytes)
 {
@@ -41,10 +41,8 @@ void test(unsigned long long mlen, unsigned long long adlen)
   {
     Serial.println("ERRORE: crypto_aead_encrypt");
   }
-  Serial.println(micros() - time);
-
-  // for (unsigned long long i = 0; i < clen; i++) Serial.print(ct[i], HEX);
-  // Serial.println();
+  Serial.print(micros() - time);
+  Serial.print(";");
 
   time = micros();
   if (crypto_aead_decrypt(msg2, &mlen2, NULL, ct, clen, ad, adlen, nonce, key) != 0)
@@ -66,7 +64,7 @@ void test(unsigned long long mlen, unsigned long long adlen)
   {
     Serial.println("ERRORE: diverso tag");
   }
-  Serial.println(micros() - time);
+  Serial.print(micros() - time);
 }
 
 void setup()
@@ -76,11 +74,21 @@ void setup()
   // Tip by Matteo Yon per permettere la stampa
   while (!Serial);
 
-  // Caso migliore
-  test(0, 0);
-
-  // Caso peggiore
-  test(MAX_MESSAGE_LENGTH, MAX_ASSOCIATED_DATA_LENGTH);
+  for (int i = 0; i < 1000; i++)
+  {
+    test(0, 0);
+    Serial.print(";");
+    test(1, 1);
+    Serial.print(";");
+    test(ASCON_AEAD_RATE, ASCON_AEAD_RATE);
+    Serial.print(";");
+    test(2 * ASCON_AEAD_RATE, 2 * ASCON_AEAD_RATE);
+    Serial.print(";");
+    test(3 * ASCON_AEAD_RATE, 3 * ASCON_AEAD_RATE);
+    Serial.print(";");
+    test(4 * ASCON_AEAD_RATE, 4 * ASCON_AEAD_RATE);
+    Serial.println();
+  }
 
   Serial.end();
 }
