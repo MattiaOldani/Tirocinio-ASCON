@@ -55,7 +55,10 @@ Gli algoritmi utilizzano 2404 byte [7%] dello spazio complessivo per la memoria 
 
 | Implementazione | Dimensione sketch | Dimensione eseguibile | Numero di pagine | Tempo di caricamento delle pagine |
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- |
+| bi32            | 25824 byte [9%]   | 25916 byte            | 405              | 0.201s                            |
 | bi32_armv6m     | 21916 byte [8%]   | 22008 byte            | 344              | 0.198s                            |
+| bi32_lowreg     | 20232 byte [7%]   | 20324 byte            | 318              | 0.155s                            |
+| bi32_lowsize    | 16864 byte [6%]   | 16956 byte            | 265              | 0.185s                            |
 | ref             | 39628 byte [15%]  | 39720 byte            | 621              | 0.370s                            |
 
 ## Ascon128v12
