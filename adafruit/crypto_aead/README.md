@@ -64,5 +64,10 @@ Gli algoritmi utilizzano 2404 byte [7%] dello spazio complessivo per la memoria 
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- |
 | armv6m          | 21864 byte [8%]   | 21956 byte            | 344              | 0.227s                            |
 | armv6m_lowsize  | 16824 byte [6%]   | 16916 byte            | 265              | 0.183s                            |
+| bi32            | 28736 byte [10%]  | 28828 byte            | 451              | 0.369s                            |
 | bi32_armv6m     | 25076 byte [9%]   | 25168 byte            | 394              | 0.249s                            |
+| bi32_lowreg     | 22880 byte [8%]   | 22972 byte            | 359              | 0.192s                            |
+| bi32_lowsize    | 16560 byte [6%]   | 16652 byte            | 261              | 0.159s                            |
+| opt32           | 52768 byte [20%]  | 52860 byte            | 826              | 0.425s                            |
+| opt32_lowsize   | 16908 byte [6%]   | 17000 byte            | 266              | 0.170s                            |
 | ref             | 53044 byte [20%]  | 53136 byte            | 831              | 0.484s                            |
