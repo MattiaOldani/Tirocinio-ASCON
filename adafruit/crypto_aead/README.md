@@ -5,7 +5,12 @@ Prestazioni della famiglia **crypto_aead** su una board [Adafruit ItsyBitsy M0 E
 Vengono testate le seguenti **implementazioni**:
 * `armv6m`
 * `armv6m_lowsize`
+* `bi32`
 * `bi32_armv6m`
+* `bi32_lowreg`
+* `bi32_lowsize`
+* `opt32`
+* `opt32_lowsize`
 * `ref`
 
 I **tempi di esecuzione** sono espressi in microsecondi e sono formati da due valori:
@@ -22,7 +27,12 @@ Gli algoritmi utilizzano 2404 byte [7%] dello spazio complessivo per la memoria 
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- |
 | armv6m          | 22048 byte [8%]   | 22140 byte            | 346              | 0.192s                            |
 | armv6m_lowsize  | 16864 byte [6%]   | 16956 byte            | 265              | 0.162s                            |
+| bi32            | 29168 byte [11%]  | 29260 byte            | 458              | 0.250s                            |
 | bi32_armv6m     | 25420 byte [9%]   | 25512 byte            | 399              | 0.226s                            |
+| bi32_lowreg     | 23076 byte [8%]   | 23168 byte            | 362              | 0.208s                            |
+| bi32_lowsize    | 16700 byte [6%]   | 16792 byte            | 263              | 0.166s                            |
+| opt32           | 53160 byte [20%]  | 53252 byte            | 833              | 0.421s                            |
+| opt32_lowsize   | 16948 byte [6%]   | 17040 byte            | 267              | 0.182s                            |
 | ref             | 53268 byte [20%]  | 53360 byte            | 834              | 0.503s                            |
 
 ## Ascon128abi32v12
