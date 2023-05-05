@@ -51,7 +51,12 @@ Gli algoritmi utilizzano 2404 byte [7%] dello spazio complessivo per la memoria 
 | --------------- | ----------------- | --------------------- | ---------------- | --------------------------------- |
 | armv6m          | 23108 byte [8%]   | 23200 byte            | 363              | 0.210s                            |
 | armv6m_lowsize  | 16888 byte [6%]   | 16980 byte            | 266              | 0.179s                            |
+| bi32            | 32132 byte [12%]  | 32224 byte            | 504              | 0.300s                            |
 | bi32_armv6m     | 27748 byte [10%]  | 27840 byte            | 435              | 0.271s                            |
+| bi32_lowreg     | 24964 byte [9%]   | 25056 byte            | 391              | 0.240s                            |
+| bi32_lowsize    | 16600 byte [6%]   | 16692 byte            | 261              | 0.164s                            |
+| opt32           | 58872 byte [22%]  | 58964 byte            | 922              | 0.455s                            |
+| opt32_lowsize   | 16972 byte [6%]   | 17064 byte            | 267              | 0.170s                            |
 | ref             | 56412 byte [21%]  | 56504 byte            | 883              | 0.526s                            |
 
 ## Ascon128bi32v12
