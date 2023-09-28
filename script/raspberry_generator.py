@@ -11,18 +11,24 @@ def main(family: str, implementations: list) -> None:
     for algorithm in [d for d in os.listdir() if os.path.isdir(d)]:
         os.chdir(algorithm)
 
-        for implementation in [i for i in implementations if i in [d for d in os.listdir() if os.path.isdir(d)]]:
+        valid_implementation = [d for d in os.listdir() if os.path.isdir(d)]
+        for implementation in [i for i in implementations if i in valid_implementation]:
             os.chdir(implementation)
             
             destination = os.path.join(SAVE, family, algorithm, implementation)
             os.makedirs(destination, exist_ok=True)
 
-            files = [file for file in os.listdir() if os.path.isfile(file) and len(file.split(".")) == 2]
+            files = list(filter(
+                lambda x : os.path.isfile(x) and len(x.split(".")) == 2,
+                os.listdir()
+            ))
             for file in files:
                 shutil.copy(file, destination)
             
-            shutil.copy(os.path.join(SAVE, "main.ino"), destination)
+            shutil.copy(os.path.join(SAVE, "main.c"), destination)
             shutil.copy(os.path.join(SAVE, f"{family}.h"), destination)
+            new_name = os.path.join(destination, f"{implementation}.csv")
+            shutil.copy(os.path.join(SAVE, "template.csv"), new_name)
                 
             os.chdir("..")
         
