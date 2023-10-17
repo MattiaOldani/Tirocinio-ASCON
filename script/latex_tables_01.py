@@ -72,8 +72,8 @@ def generate_latex_file(mode: str, start: int, template: str) -> None:
 
 
 def main() -> None:
-    generate_latex_file("A", 0, "template_01.tex")
-    generate_latex_file("V", 1, "template_02.tex")
+    generate_latex_file("MODE", 0, "template_01.tex")
+    generate_latex_file("MODE", 1, "template_02.tex")
 
 
 if __name__ == "__main__":
